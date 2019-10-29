@@ -29,15 +29,10 @@
       
       function draw(arrayData) {
         var data = new google.visualization.arrayToDataTable(arrayData);
-        
-        var options = {
-          title: 'The frequenices of fire accident',
-          is3D: true,
-        };
-        
+                
         var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
 
-        chart.draw(data, options);
+        chart.draw(data);
       }
     </script>
   </head>
