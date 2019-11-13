@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script src="jquery-csv.js"></script>
+
+    <script type="text/javascript">
+      google.charts.load('current', {packages: ['geochart']});
+      google.charts.setOnLoadCallback(readFile);
+      function readFile() {
+        filename = "GDP.csv";
+        $.get(filename, function(csvString) {
+          var arrayData = $.csv.toArrays(csvString, {onParseValue: $.csv.hooks.castToScalar});
+          draw(arrayData)
+        });
+      };
+      function draw(arrayData) {
+        var data = new google.visualization.arrayToDataTable(arrayData);
+       var options = {
+          title: 'The frequenices of fire accident (per million)',
+        };
+        var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+ <body>
+    <div id="introduction" style="max-width: 800px; font-family: Verdana, Dotum; margin: auto; padding-bottom: 30px"> 
+       <h1></h1> 
+       <p>date: 2019-11-13</p> 
+       <p>name: 21400641 Junghoon Lim</p> 
+       <p>Introduction: This chart shows the frequencies of car's fire accident by company. </p> 
+       <p>Data: The data is from Korea economic (https://www.hankyung.com/economy/article/2018080977371)</p> 
+     </div> 
+    <div id="regions_div" style="max-width: 1200px; margin: auto; width: 1200px; height: 500px;"></div>
+  </body>
+</html>
