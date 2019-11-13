@@ -20,10 +20,9 @@
         var data = new google.visualization.arrayToDataTable(arrayData);
        var options = {
           title: 'GDP of TOP 13 Country',
-          displayMode: "markers",
           colorAxis:{colors:["red", "blue"]}
         };
-        var chart = new google.visualization.GeoChart(document.getElementById('chart_div'));
+        var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
         chart.draw(data, options);
       }
     </script>
@@ -36,6 +35,6 @@
        <p>Introduction: This chart GDP of TOP 13 Country. </p> 
        <p>Data: The data is from United News (https://www.yna.co.kr/view/AKR20180814148100002)</p> 
      </div> 
-    <div id="chart_div" style="max-width: 1200px; margin: auto; width: 1200px; height: 500px;"></div>
+    <div id="regions_div" style="max-width: 1200px; margin: auto; width: 1200px; height: 500px;"></div>
   </body>
 </html>
