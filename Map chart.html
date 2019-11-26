@@ -8,8 +8,8 @@
 
     <script type="text/javascript">
       google.charts.load('current', 
-        {packages: ['map'],
-        'mapsApiKey': 'AIzaSyAhnHN2S2yQJrG9d-DgqeHvznYBJ-4j92c'
+        {"packages": ["map"],
+        "mapsApiKey": "AIzaSyAhnHN2S2yQJrG9d-DgqeHvznYBJ-4j92c"
     });
       google.charts.setOnLoadCallback(readFile);
 
@@ -20,7 +20,8 @@
           draw(arrayData)
         });
       };
-      function draw(arrayData) {
+
+      function drawChart(arrayData) {
         var data = new google.visualization.arrayToDataTable(arrayData);
 
         var map = new google.visualization.Map(document.getElementById('map_div'));
@@ -29,7 +30,7 @@
           showInfoWindow : true,
           zoomlevel : 6,
           useMapTypeControl : true
-          });
+        });
       }
 
     </script>
