@@ -14,7 +14,7 @@
       google.charts.setOnLoadCallback(readFile);
 
       function readFile() {
-        filename = "GDP.csv";
+        filename = "Map.csv";
         $.get(filename, function(csvString) {
           var arrayData = $.csv.toArrays(csvString, {onParseValue: $.csv.hooks.castToScalar});
           draw(arrayData)
