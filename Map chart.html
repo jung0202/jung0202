@@ -20,7 +20,8 @@
           draw(arrayData)
         });
       };
-
+      
+      google.charts.setOnLoadCallback(drawChart);
       function drawChart(arrayData) {
         var data = new google.visualization.arrayToDataTable(arrayData);
 
