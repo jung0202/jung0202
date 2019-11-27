@@ -23,14 +23,16 @@
       
       function draw(arrayData) {
         var data = new google.visualization.arrayToDataTable(arrayData);
+        
+        var options = {
+        zoomLevel: 6,
+        showTooltip: true,
+        showInfoWindow: true,
+        useMapTypeControl: true};
 
         var map = new google.visualization.Map(document.getElementById('map_div'));
-        map.draw(data, {
-          showTooltip : true,
-          showInfoWindow : true,
-          zoomlevel : 7,
-          useMapTypeControl : true
-        });
+        
+        map.draw(data, options);
       }
 
     </script>
